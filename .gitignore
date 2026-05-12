@@ -1,0 +1,36 @@
+# Hugo build output
+/public/
+/resources/_gen/
+/hugo_stats.json
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+
+# Node dependencies (if using npm for assets)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Backup files
+*.bak
+*.swp
+*~
+*.tmp
+
+# VS Code
+.vscode/
+
+# Netlify / Vercel local files
+.netlify/
+.vercel/
+
+# Logs
+*.log
+
+# dotenv files (if used for local config)
+.env
+.env.*
+
+# Cache
+.cache/
