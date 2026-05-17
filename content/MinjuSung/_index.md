@@ -9,7 +9,7 @@ authors:
   - "Minju Sung"
 ---
 <style>
-  body:has(.strawberry-banner) header h1.text-4xl,
+  body:has(.strawberrybanner) header h1.text-4xl,
   body:has(.strawberry-banner) header h1.text-4xl + div {
     display: none;
   }
