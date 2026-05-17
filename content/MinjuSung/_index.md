@@ -20,7 +20,7 @@ authors:
     width: 100vw;
     height: 320px;
     margin: 0 0 2.5rem 0;
-    background-image: url('/strawberrybanner.webp');
+    background-image: url('/strawb.jpeg');
     background-size: cover;
     background-position: center;
     overflow: hidden;
