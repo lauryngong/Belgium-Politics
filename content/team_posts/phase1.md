@@ -76,4 +76,8 @@ Carrie Miller is a 28-year-old academic who focuses on researching environmental
 # Datasets + Descriptions
 ![cropHealth](/dataSoil.png)
 
-The agriculture_dataset (csv) includes data on crop growth, GPS locations, and the underlying environmental factors necessary for crop optimization. It will be used to predict the success rates and percentages for crops based on the factors via a model and display statistics on each measure on a user website.
+The agriculture_dataset (csv) from Kaggle includes data on crop growth, chlorophyll statistics, GPS locations, and the underlying environmental factors necessary for crop optimization. It will be used to predict the success rates and percentages for crops based on the factors via a model and display statistics on each measure on a user website. The data is downloaded locally and will be read through python pandas for the model.
+
+![weatherApi](/forecastApi.png)
+
+The forecast api from Open-Meteo gives us weather data from across Europe including latitude, longitude, precipitation, elevation, temperature, and other forecast data. This will be used to locate which areas in Europe have ideal farming conditions. The API on default provides forecasts for 7 days, but the user is able to access forecasts for up to 16 days. Past weather data can be accessed via a Past Days feature to access archived forecasts. Additionally, non-commercial use is free and has a limit of less than 10,000 daily API calls.
