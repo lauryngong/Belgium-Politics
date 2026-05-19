@@ -6,8 +6,10 @@ description: "Our Idea"
 slug: "phase1post"
 tags: ["project", "Setup"]
 authors:
-  - "eric_gerber"
-  - "mark_fontenot"
+  - "lauryn_gong"
+  - "elise_wizemann"
+  - "nicole-stekol"
+  - "minju_sung"
 showAuthorsBadges: false
 ---
 
