@@ -22,7 +22,6 @@ I contributed to Phase 1 by researching different topic areas for our project an
 Additionally, I contributed to the development of the user personas and helped ensure that the dataset we plan to use aligns with both the ethical and technical requirements of the project. This included evaluating factors like accessibility, rate limits, potential biases, and whether the dataset contained features that were both relevant and large enough to support the goals of our project.
 
 ![beguine](/IMG_0691.jpeg)
-![EUP2](/IMG_0803.jpeg)
 ![EUP](/IMG_0806.jpeg)
 ![BrussCentral](/IMG_0831.jpeg)
 
