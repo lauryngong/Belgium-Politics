@@ -8,47 +8,6 @@ categories: ["category1"]
 authors:
   - "Minju Sung"
 ---
-<style>
-  body:has(.strawberrybanner) header h1.text-4xl,
-  body:has(.strawberry-banner) header h1.text-4xl + div {
-    display: none;
-  }
-  .strawberry-banner {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 320px;
-    margin: 0 0 2.5rem 0;
-    background-image: url('/strawb.jpeg');
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .strawberry-banner::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.45) 100%);
-  }
-  .strawberry-banner h1 {
-    position: relative;
-    z-index: 1;
-    margin: 0;
-    color: #ffffff;
-    font-size: 3.5rem;
-    font-weight: 800;
-    letter-spacing: 0.01em;
-    text-shadow: 0 2px 14px rgba(0,0,0,0.5);
-  }
-</style>
-
-<div class="strawberry-banner">
-  <h1>Minju Sung</h1>
-</div>
 
 ## Leuven Experiences
 ### What I found interesting
@@ -61,3 +20,9 @@ Additionally, I enjoyed learning about the EU’s direct impact on citizens’ d
 I contributed to Phase 1 by researching different topic areas for our project and identifying areas where our team could make meaningful contributions. This included speaking with guest speakers and local residents to better understand the challenges citizens and the country face in their everyday lives. These conversations helped me gain a stronger understanding of important social and economic issues, which allowed our team to better shape potential solutions.
 
 Additionally, I contributed to the development of the user personas and helped ensure that the dataset we plan to use aligns with both the ethical and technical requirements of the project. This included evaluating factors like accessibility, rate limits, potential biases, and whether the dataset contained features that were both relevant and large enough to support the goals of our project.
+
+![beguine](/IMG_0691.jpeg)
+![EUP2](/IMG_0803.jpeg)
+![EUP](/IMG_0806.jpeg)
+![BrussCentral](/IMG_0831.jpeg)
+
