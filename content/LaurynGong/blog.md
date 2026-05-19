@@ -1,6 +1,5 @@
 ---
-title: "Lauryn Gong"
-description: "Week 1 Blog Post, Leuven Experiences"
+title: "Week 1 Blog Post, Leuven Experiences"
 date: 2026-05-19
 draft: false
 tags: ["authors", "config", "docs"]
