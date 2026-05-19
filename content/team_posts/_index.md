@@ -18,4 +18,6 @@ showAuthorsBadges : false
 
 ![boom picture](/farmerMarketPic.jpg)
 
-Welcome to the Professorial Team's Blog
+![boom picture](/farmerMarketPic.jpg)
+
+Welcome to the blog for Farmer's Market!! Here will be our blog posts reporting on our progress throughout our process!
