@@ -14,6 +14,8 @@ enableCodeCopy = false
 
 replyByEmail = false
 
+customCSS = ["custom.css"]
+
 # mainSections = ["section1", "section2"]
 # robots = ""
 
@@ -43,7 +45,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
 
 [homepage]
   layout = "hero" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "leuven.jpeg" # used in: hero, and card
+  homepageImage = "pixelfarmwallpaper.jpg" # used in: hero, and card
   showRecent = false
   showRecentItems = 5
   showMoreLink = false
