@@ -16,4 +16,6 @@ showAuthorsBadges : false
 
 # Welcome to Farmer's Market!
 
+![boom picture](/farmerMarketPic.jpg)
+
 Welcome to the Professorial Team's Blog
