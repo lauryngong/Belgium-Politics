@@ -70,3 +70,10 @@ Carrie Miller is a 28-year-old academic who focuses on researching environmental
 **User story 3:** As a researcher, I want to add my own data for personal use so I can get more accurate and custom data for specific areas.
 
 **User story 4:** As a researcher, I want a way to estimate how certain properties of soil will change in the future based on current and past data, so I can research the possible future trends of soil in an area and its possible effects.
+
+---
+
+# Datasets + Descriptions
+![cropHealth](/dataSoil.png)
+
+The agriculture_dataset (csv) includes data on crop growth, GPS locations, and the underlying environmental factors necessary for crop optimization. It will be used to predict the success rates and percentages for crops based on the factors via a model and display statistics on each measure on a user website.
