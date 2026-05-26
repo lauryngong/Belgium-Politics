@@ -45,17 +45,15 @@ Joe Hudson is a 45-year-old farmer who manages agriculture and crop production o
 
 ## Sarah Baker — Policy Maker, age 52
 
-Sarah Baker is a 52-year-old Regional Agricultural Policy Director who makes land-use and sustainability decisions for her region. She uses environmental datasets such as weather patterns, soil quality, elevation, and erosion risk to determine which areas should be preserved for farming, protected from environmental damage, or approved for development. Because this data is often spread across multiple sources, Sarah needs a platform that can combine and visualize information clearly. This application helps her make more accurate, data-driven decisions that support sustainable agriculture and urban planning.
+A key user persona for this application is a policymaker working in agricultural and environmental management. Sarah Baker is a 52-year-old Regional Agricultural Policy Director who makes land-use and sustainability decisions for her region. She uses environmental datasets such as weather patterns, soil quality, elevation, and erosion risk to determine which areas should be preserved for farming, protected from environmental damage, or approved for development. Because this data is often spread across multiple sources, Sarah needs a platform that can combine and visualize information clearly. This application helps her make more accurate, data-driven decisions that support sustainable agriculture and urban planning.
 
-**User story 1:** As a policy maker, I want to identify highly fertile farming regions so that I can prioritize them for agricultural preservation and funding.
+**User story 1:** As a policy maker, I want to view a map showing different regions so that I can determine which agricultural areas should receive preservation funding.
 
-**User story 2:** As a policy maker, I want to analyze soil erosion and flood-risk data so that I can prevent construction projects in environmentally unstable areas.
+**User story 2:** As a policy maker, I want to create and save regional land-use analyses using environmental and agricultural demographic data so that I can track and present policy planning projects over time.
 
-**User story 3:** As a policy maker, I want to compare weather, elevation, and soil quality across different regions so that I can make informed land-use decisions.
+**User story 3:** As a policy maker, I want to update regional policy recommendations and respond to community-reported complaints so that I can quickly address areas requiring government intervention.
 
-**User story 4:** As a policy maker, I want to view long-term environmental trends and predictions so that I can create sustainable agricultural policies for future development.
-
-**User story 5:** As a policy maker, I want to generate visual reports and maps from environmental datasets so that I can clearly present findings to government officials and stakeholders.
+**User story 4:** As a policy maker, I want to remove outdated analyses, alerts, or policy reports from the system so that the platform displays only relevant, up-to-date planning information.
 
 ---
 
