@@ -92,8 +92,8 @@ Full code found on [our github repo](https://github.com/lauryngong/Farmers-Marke
 
 ## Wireframes
 
-![Map](/Users/lauryngong/Downloads/IMG_1971.jpg)
-![Farmer](/Users/lauryngong/Downloads/IMG_2181.JPG)
-![Policy Maker](/Users/lauryngong/Downloads/IMG_2180.jpg)
-![Researcher1](/Users/lauryngong/Downloads/IMG_2182.JPG)
-![Researcher2](/Users/lauryngong/Downloads/IMG_1973.jpg)
+![Map](IMG_1971.png)
+![Farmer](IMG_2181.png)
+![Policy Maker](IMG_2180.png)
+![Researcher1](IMG_2182.png)
+![Researcher2](IMG_1973.png)
