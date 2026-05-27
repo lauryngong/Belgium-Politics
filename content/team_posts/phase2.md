@@ -48,4 +48,10 @@ This scatter plot shows the relationship between total annual precipitation and 
 
 # Data Models
 
+## Wireframes
 
+![Map](/Users/lauryngong/Downloads/IMG_1971.jpg)
+![Farmer](/Users/lauryngong/Downloads/IMG_2181.JPG)
+![Policy Maker](/Users/lauryngong/Downloads/IMG_2180.jpg)
+![Researcher1](/Users/lauryngong/Downloads/IMG_2182.JPG)
+![Researcher2](/Users/lauryngong/Downloads/IMG_1973.jpg)
