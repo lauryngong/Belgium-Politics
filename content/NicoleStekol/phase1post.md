@@ -16,6 +16,6 @@ From my first week on this dialogue, I have already learned so much. I have love
 
 Super excited for next week!
 
-![European Parliament](C:\Users\npste\Downloads\commission.jpeg)
-![Grand Place](C:\Users\npste\Downloads\plaza.jpeg)
-![Group Picture](C:\Users\npste\Downloads\group.JPG)
+![European Parliament](/commission.jpeg)
+![Grand Place](/plaza.jpeg)
+![Group Picture](/group.JPG)
