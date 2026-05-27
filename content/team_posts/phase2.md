@@ -46,7 +46,41 @@ This scatter plot shows the relationship between total annual precipitation and 
 
 ---
 
-# Data Models
+# Data Models and Diagrams
+
+We added screenshots of our diagrams, but the actual diagrams are pretty zoomed out to get a good idea on the overall structure. The full diagrams are avaliable [here on LucidChart](https://lucid.app/lucidchart/3a336536-3833-412a-b198-c8f2f72cb701/edit?viewport_loc=5327%2C-2272%2C2778%2C1500%2C0_0&invitationId=inv_12685356-ead0-42e8-a394-d4a251033281)
+
+## ER Diagram by Persona
+
+### Farmer Persona
+
+![Farmer ER Diagram](/ERDiagramFarmer.png)
+
+### Policy Maker Persona
+
+![Policy Maker ER Diagram](/ERDiagramPolicy.png)
+
+### Researcher Persona
+
+![Researcher ER Diagram](/ERDiagramResearcher.png)
+
+
+## Global ER Diagram
+
+![Global ER Diagram](/ERDiagramGlobal.png)
+
+## Relational Diagram
+
+![Global Relational Diagram](/relationalDiagram.png)
+
+# First DDL pass
+
+![Full Initial DDL](/fullDDL.png)
+
+
+Full code found on [our github repo](https://github.com/lauryngong/Farmers-Market)
+^^ look for path database-files\first_market.sql
+
 
 ## Wireframes
 
