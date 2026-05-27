@@ -30,7 +30,7 @@ For the policymaker persona, we added features involving agricultural demographi
 Aside from the model that will be used to predict if a farmers’ crops will be successful or not, our second model will be a linear regression that will predict the selling price of a farmers’ crop based on the crop type, country, yearly precipitation, and average yearly temperature. In order to get a start on this, we performed the data EDA and visualizations on the data for this second model.
 I found a Eurostat database that includes yearly prices for different crops for each country in the EU, and combined that with a weather API I found that I got yearly precipitation sum from and average yearly precipitation. This left me with a dataset with columns for country, selling price, crop, year, temperature mean, and precipitation sum. To finish cleaning it, I saw that some of the price values were na, so I replaced them with the median of those countries’ respective prices. I then removed all of the National currency values because they are duplicates of the columns in euros, just in the different currencies. 
 This is how the dataset looks:
-!(assets\pricesdf.png)
+![prices df](assets\pricesdf.png)
 
 ---
 
