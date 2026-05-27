@@ -116,14 +116,14 @@ Full code found on [our github repo](https://github.com/lauryngong/Farmers-Marke
 # Wireframes
 
 ### General Map
-![Map](IMG_1971.png)
+![Map](/IMG_1971.png)
 
 ### Farmer Wireframes
-![Farmer](IMG_2181.png)
+![Farmer](/IMG_2181.png)
 
 ### Policy Maker Wireframes
-![Policy Maker](IMG_2180.png)
+![Policy Maker](/IMG_2180.png)
 
 ### Researcher Wireframes
-![Researcher1](IMG_2182.png)
-![Researcher2](IMG_1973.png)
+![Researcher1](/IMG_2182.png)
+![Researcher2](/IMG_1973.png)
