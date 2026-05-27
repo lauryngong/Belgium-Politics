@@ -2,7 +2,7 @@
 title: "Blog 2"
 date: 2026-05-27
 draft: false
-tags: ["authors", "config", "docs"]
+tags: ["tag1", "tag2"]
 categories: ["category1"]
 slug: "Blog 2"
 authors:
