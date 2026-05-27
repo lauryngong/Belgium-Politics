@@ -56,18 +56,26 @@ We added screenshots of our diagrams, but the actual diagrams are pretty zoomed 
 
 ![Farmer ER Diagram](/ERDiagramFarmer.png)
 
+For our Farmer Persona, the main ways they would use a database is to create a farm entity for all of their farms, and fill in the information regarding the farm's environment and the crops grown (idealCropData). This information would then be fed into the machine learning model focused on crop health (through the cropHealthModelCoefficients table), and the farmer will have predictions on how well their crops will do. They also have access to the post board where they can post about their farming troubles, and can comment and react on other posts. 
+
 ### Policy Maker Persona
 
 ![Policy Maker ER Diagram](/ERDiagramPolicy.png)
+
+Our Policy Maker Persona is mainly focused on taking data and making it easily understandable and applicable, so they have the ability to save the data farmer's generate, along with the predicted price the crops will sell at based on our second machine learning model. Using this saved data they can then generate reports and graphs, which they can also save. They also have the ability to access the discussion board to see what local farmers are disucssing, and can respond and hopefully focus their policy on the issues found in the data and voiced by the farmers.
 
 ### Researcher Persona
 
 ![Researcher ER Diagram](/ERDiagramResearcher.png)
 
+The researcher persona focuses more on filtering data and generating data heavy reports. They have the ability to save data, and generate reports and graphs using said data. They can also access the discussion board and post, comment, and react to other posts.
+
 
 ## Global ER Diagram
 
 ![Global ER Diagram](/ERDiagramGlobal.png)
+
+Everything put together!
 
 ## Relational Diagram
 
