@@ -82,4 +82,10 @@ Full code found on [our github repo](https://github.com/lauryngong/Farmers-Marke
 ^^ look for path database-files\first_market.sql
 
 
+## Wireframes
 
+![Map](/Users/lauryngong/Downloads/IMG_1971.jpg)
+![Farmer](/Users/lauryngong/Downloads/IMG_2181.JPG)
+![Policy Maker](/Users/lauryngong/Downloads/IMG_2180.jpg)
+![Researcher1](/Users/lauryngong/Downloads/IMG_2182.JPG)
+![Researcher2](/Users/lauryngong/Downloads/IMG_1973.jpg)
