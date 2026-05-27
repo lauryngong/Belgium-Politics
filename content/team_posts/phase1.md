@@ -59,15 +59,17 @@ A key user persona for this application is a policymaker working in agricultural
 
 ##  Carrie Miller — Soil Researcher, age 28
 
-Carrie Miller is a 28-year-old academic who focuses on researching environmental health, specifically soil. She looks at the chemical and biological properties of soil in the areas around her, and while she does take her own samples, she often relies on external databases to see the soil conditions of the larger overall area. The data she does look at is often outdated, has different methodologies, or covers largely different scales of area, so she cannot easily combine them all together. Carrie hopes to find an application that can bring all this data together in one area and take into account the different scales and times that the data was taken to give a conclusive answer to the health of soil in specific areas.
+Carrie Miller is a 28-year-old academic who focuses on researching environmental health, specifically soil. She looks at the chemical and biological properties of soil in the areas around her, and while she does take her own samples, she often relies on external databases to see the soil conditions of the larger overall area. The data she does look at is often outdated, has different methodologies, or covers largely different scales of area, so she can not easily combine them all together. Carrie hopes to find an application that can bring all this data together in one area and take into account the different scales and times that the data was taken to give a conclusive answer to the health of soil in specific areas. She also wants an easy way for her research to be applied in real life, instead of sitting in a scientific journal.
 
 **User story 1:** As a researcher, I want to be able to filter data by when it was collected or its location, so I can find data relevant to what I want.
 
-**User story 2:** As a researcher, I want to be able to export data into one clear place so I can use it for purposes beyond the app.
+**User story 2:** As a researcher, I want to add my own data for personal use so I can get more accurate and custom data for specific areas, and let this data be used by other users.
 
-**User story 3:** As a researcher, I want to add my own data for personal use so I can get more accurate and custom data for specific areas.
+**User story 3:** As a researcher, I want to be able to create and save data plots and reports from selected data, and then export them along with raw data outside the application.
 
 **User story 4:** As a researcher, I want a way to estimate how certain properties of soil will change in the future based on current and past data, so I can research the possible future trends of soil in an area and its possible effects.
+
+**User story 5:** As a researcher, I want to monitor and respond to farmers’ responses on the forms so I can connect my data findings to real issues farmers are facing and respond to them.
 
 ---
 
