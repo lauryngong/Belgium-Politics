@@ -113,10 +113,17 @@ Full code found on [our github repo](https://github.com/lauryngong/Farmers-Marke
 ^^ look for path database-files\first_market.sql
 
 
-## Wireframes
+# Wireframes
 
+### General Map
 ![Map](IMG_1971.png)
+
+### Farmer Wireframes
 ![Farmer](IMG_2181.png)
+
+### Policy Maker Wireframes
 ![Policy Maker](IMG_2180.png)
+
+### Researcher Wireframes
 ![Researcher1](IMG_2182.png)
 ![Researcher2](IMG_1973.png)
