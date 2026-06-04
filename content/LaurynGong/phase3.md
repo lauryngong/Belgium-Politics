@@ -1,5 +1,5 @@
 ---
-title: "Blog 2"
+title: "Blog 3"
 date: 2026-06-04
 draft: false
 tags: ["tag1", "tag2"]
