@@ -47,8 +47,8 @@ Generated data:
 
 # REST API Matrix
 
-Resource | GET | POST | PUT | DELETE
--------- | --- | ---- | --- | ------
+| Resource | GET | POST | PUT | DELETE |
+| -------- | --- | ---- | --- | ------ |
 | `/farms` | Shows list of all farms | Add a new farm (request body contains farm details) | — | — |
 | `/farms/{farm_id}` | Shows details of a specific farm | — | Update farm information | Delete farm |
 | `/user_crop_data` | — | Add new farm conditions (request body contains farm condition data) | — | — |
@@ -81,3 +81,14 @@ Resource | GET | POST | PUT | DELETE
 
 # Mocked-up App
 
+## Farmer Discussion Board Page:
+![Farmer Discussion Board Page](FarmerDiscussionBoardPage.png)
+
+## Policymaker Crop Price Predictions Page:
+![Policymaker Crop Price Predictions Page](PolicymakerCropPricePredictionsPage.png)
+
+## Policymaker Crop Map Page:
+![Policymaker Crop Map Page](PolicymakerCropMapPage.png)
+
+## Policymaker Report Maker Page:
+![Policymaker Report Maker Page](PolicymakerReportMakerPage.png)
