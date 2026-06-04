@@ -5,7 +5,7 @@ date: 2026-06-05
 draft: false
 tags: ["tag1", "tag2"]
 categories: ["category1"]
-slug: "Blog 3"
+slug: "Blog3"
 authors:
   - "Nicole Stekol"
 ---
