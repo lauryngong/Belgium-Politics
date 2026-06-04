@@ -75,14 +75,14 @@ Generated data:
 
 # Mocked-up App
 
-### Farmer Discussion Board Page:
+## Farmer Discussion Board Page:
 ![Farmer Discussion Board Page](FarmerDiscussionBoardPage.png)
 
-### Policymaker Crop Price Predictions Page:
+## Policymaker Crop Price Predictions Page:
 ![Policymaker Crop Price Predictions Page](PolicymakerCropPricePredictionsPage.png)
 
-### Policymaker Crop Map Page:
+## Policymaker Crop Map Page:
 ![Policymaker Crop Map Page](PolicymakerCropMapPage.png)
 
-### Policymaker Report Maker Page:
+## Policymaker Report Maker Page:
 ![Policymaker Report Maker Page](PolicymakerReportMakerPage.png)
