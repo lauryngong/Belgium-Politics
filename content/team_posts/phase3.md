@@ -43,6 +43,14 @@ Generated data:
 
 # ML Features
 
+# Prices Linear Regression Model Updates
+- Refined the best linear regression model that we could find to predict prices of crops in countries. The final model includes average temperature, precipitation sum, precipitation sum squared, price lag 1 and price lag 2. We included the price lags because the years were interfering, so the price lags take in the prices in the years before and after making it more accurate. We also included precipitation sum squared because the precipitation sum vs price scatter plot was not completely linear. These allowed us to get to a r2 around 0.43
+- We transfered this model from the jupyter notebook into a python script in a few steps. First, we created databases for the weather data, prices data, and scaled prices. We also input the coefficients and scaled mean and standard deviations into the appropriate databases. I then input the code for the model into the predict() function of the price prediction model python script.
+- We routed the prices model so that when the url is called with the crop and country, the predict() function should be called and output the predicted price
+
+## The Problem
+We loaded the data from the csv in and input all of the appropriate INSERT statements (specifically for the weather df). However, when we try to do crud /prices_model/prediction/Rye/Austria , we get errors telling us that the 'geo' column cannot be found in the weather database. I worked with all of the professors and Seamus on this, and no one could figure it out since the geo column very clearly was present in the data. This means that we were not able to get the routing to work and therefore could not connect the prices model to any front end screen.
+
 
 # Issues in ML model exploration
 
