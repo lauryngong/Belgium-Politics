@@ -22,7 +22,7 @@ Welcome back to the Farmer's Market! During this past week, a lot of time was sp
 
 ## Data Model
 
-- Separated the ideal_crop_data table into multiple different tables (user_crop_data, with the main goal of separating the ML data (what is scraped and stored) and user generated data
+- Separated the ideal_crop_data table into multiple different tables (user_crop_data, with the main goal of separating the ML data (what is scraped and stored) and user generated data)
 - Changed the attributes of user_crop_data to better represent the new database for crop type prediction ML
 
 
