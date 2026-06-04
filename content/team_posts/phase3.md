@@ -47,8 +47,8 @@ Generated data:
 
 # REST API Matrix
 
-Resource | GET | POST | PUT | DELETE
--------- | --- | ---- | --- | ------
+| Resource | GET | POST | PUT | DELETE |
+| -------- | --- | ---- | --- | ------ |
 | `/farms` | Shows list of all farms | Add a new farm (request body contains farm details) | — | — |
 | `/farms/{farm_id}` | Shows details of a specific farm | — | Update farm information | Delete farm |
 | `/idealCropData` | — | Add new farm conditions (request body contains farm condition data) | — | — |
