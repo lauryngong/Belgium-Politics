@@ -31,10 +31,12 @@ Welcome back to the Farmer's Market! During this past week, a lot of time was sp
 *Sourced data:*
 - All data used to train ML models, crop_price_model_coefficients, crop_health_model_coefficients
 Generated data:
+fo
 *Mockaroo data*
 - Users
 - Farms
 - Farms_Locations
+
 *Manually generated data since we need specific parameters or themes*
 - Posts, Comments, Reactions, user_crop_data, saved_data, saved_graphs
 
