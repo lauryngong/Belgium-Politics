@@ -22,7 +22,7 @@ Welcome back to the Farmer's Market! During this past week, a lot of time was sp
 
 ## Data Model
 
-- Separated the ideal_crop_data table into multiple different tables (user_crop_data, with the main goal of separating the ML data (what is scraped and stored) and user generated data
+- Separated the ideal_crop_data table into multiple different tables (user_crop_data, with the main goal of separating the ML data (what is scraped and stored) and user generated data)
 - Changed the attributes of user_crop_data to better represent the new database for crop type prediction ML
 
 
@@ -49,7 +49,28 @@ Generated data:
 
 Resource | GET | POST | PUT | DELETE
 -------- | --- | ---- | --- | ------
-
+| `/farms` | Shows list of all farms | Add a new farm (request body contains farm details) | — | — |
+| `/farms/{farm_id}` | Shows details of a specific farm | — | Update farm information | Delete farm |
+| `/idealCropData` | — | Add new farm conditions (request body contains farm condition data) | — | — |
+| `/idealCropData/{farm_id}` | Shows conditions for a specific farm | — | Update farm conditions | Delete farm conditions |
+| `/idealCropData/{crop_id}` | Shows ideal conditions for a specific crop | — | — | — |
+| `/crops` | Shows all crops | Add a new crop (request body contains crop information) | — | — |
+| `/crops/{crop_id}` | Shows information for a specific crop | — | Update crop information | — |
+| `/savedData` | — | Add saved ML model output data | — | — |
+| `/savedData/{saved_id}` | Shows specific saved data | — | Update saved data | Delete saved data |
+| `/savedGraphs` | — | Add a saved graph (request body contains graph and ML data) | — | — |
+| `/savedGraphs/{id}` | Shows a specific saved graph | — | Update saved graph | Delete saved graph |
+| `/savedReports` | — | Add a saved report (request body contains report and ML data) | — | — |
+| `/savedReports/{id}` | Shows a specific saved report | — | Update saved report | Delete saved report |
+| `/users` | Shows all users | Add a new user (request body contains user information) | — | — |
+| `/users/{user_id}` | Shows details for a specific user | — | Update user information | Delete user |
+| `/posts` | Shows all posts | Add a new post (request body contains title and text) | — | — |
+| `/posts/{post_id}` | Shows a specific post | — | Update post | Delete post |
+| `/comments/post/{post_id}` | Shows all comments under a post | Add a comment under a post (request body contains comment text) | — | — |
+| `/comments/user/{user_id}` | Shows all comments made by a user | — | — | — |
+| `/comments/{comment_id}` | Shows a specific comment | — | Update comment | Delete comment |
+| `/reactions/post/{post_id}` | Shows all reactions under a post | Add a reaction (request body contains like/dislike value) | — | — |
+| `/reactions/{reaction_id}` | Shows a specific reaction | — | Update reaction | Delete reaction |
 
 
 # Mocked-up App
