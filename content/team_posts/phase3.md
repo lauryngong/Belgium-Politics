@@ -15,12 +15,28 @@ showAuthorsBadges: false
 
 # Introduction
 
+Welcome back to the Farmer's Market! During this past week, a lot of time was spent trying to work through database and ML issues, along with figuring out exactly what we wanted our project to do. Our overall goal is to still help farmers see what crops they should grow depending on their environment, but instead of doing this through a crop success rate, we are now doing this through the farmer putting in their environmental information, and then the ML model will give them the crop that best fits their environment.
+
 
 # Updates
 
 ## Data Model
 
+- Separated the ideal_crop_data table into multiple different tables (user_crop_data, with the main goal of separating the ML data (what is scraped and stored) and user generated data
+- Changed the attributes of user_crop_data to better represent the new database for crop type prediction ML
+
+
 ## Creating Data
+
+*Sourced data:*
+- All data used to train ML models, crop_price_model_coefficients, crop_health_model_coefficients
+Generated data:
+*Mockaroo data*
+- Users
+- Farms
+- Farms_Locations
+*Manually generated data since we need specific parameters or themes*
+- Posts, Comments, Reactions, user_crop_data, saved_data, saved_graphs
 
 
 # ML Features
