@@ -15,15 +15,43 @@ showAuthorsBadges: false
 
 # Introduction
 
+Welcome back to the Farmer's Market! During this past week, a lot of time was spent trying to work through database and ML issues, along with figuring out exactly what we wanted our project to do. Our overall goal is to still help farmers see what crops they should grow depending on their environment, but instead of doing this through a crop success rate, we are now doing this through the farmer putting in their environmental information, and then the ML model will give them the crop that best fits their environment.
+
 
 # Updates
 
 ## Data Model
 
+- Separated the ideal_crop_data table into multiple different tables (user_crop_data, with the main goal of separating the ML data (what is scraped and stored) and user generated data)
+- Changed the attributes of user_crop_data to better represent the new database for crop type prediction ML
+
+
 ## Creating Data
+
+*Sourced data:*
+- All data used to train ML models, crop_price_model_coefficients, crop_health_model_coefficients
+Generated data:
+
+*Mockaroo data*
+- Users
+- Farms
+- Farms_Locations
+
+*Manually generated data since we need specific parameters or themes*
+- Posts, Comments, Reactions, user_crop_data, saved_data, saved_graphs
 
 
 # ML Features
+
+# Prices Linear Regression Model Updates
+- Refined the best linear regression model that we could find to predict prices of crops in countries. The final model includes average temperature, precipitation sum, precipitation sum squared, price lag 1 and price lag 2. We included the price lags because the years were interfering, so the price lags take in the prices in the years before and after making it more accurate. We also included precipitation sum squared because the precipitation sum vs price scatter plot was not completely linear. These allowed us to get to a r2 around 0.43
+- We transfered this model from the jupyter notebook into a python script in a few steps. First, we created databases for the weather data, prices data, and scaled prices. We also input the coefficients and scaled mean and standard deviations into the appropriate databases. I then input the code for the model into the predict() function of the price prediction model python script.
+- We routed the prices model so that when the url is called with the crop and country, the predict() function should be called and output the predicted price
+
+## The Problem
+We loaded the data from the csv in and input all of the appropriate INSERT statements (specifically for the weather df). However, when we try to do crud /prices_model/prediction/Rye/Austria , we get errors telling us that the 'geo' column cannot be found in the weather database. I worked with all of the professors and Seamus on this, and no one could figure it out since the geo column very clearly was present in the data. This means that we were not able to get the routing to work and therefore could not connect the prices model to any front end screen.
+
+# Logistic Regressor - New Model
 A logistic regression model was implemented in Phase III to predict Crop_Health_Label (a binary indicator of whether a crop is healthy or not) using the agriculture_dataset.csv provided in the previous phases. The cleaning and splitting of the dataset was similar to the KNN mode's process prior. Duplicates were removed, null values were accounted or, and 50% of observations were removed to efficiency before any modeling was done.
 A challenge with the model itself was figuring out how to handle class imbalance. The dataset contained observations with most predictions leaning towards a crop health indicator 1, which heavily skewed the predictions an accuracy of the data. Before balancing, the model had around 70% accuracy but with a True Negative Rate near 0 (~0.98% TNR). This means it predicted every crop as healthy regardless of input. To fix this, the majority output (1) was downsampled to match the number of class (0) observations, resulting in a more balanced dataset.
 Feature engineering to improve accuracy included one-hot encoding Crop_Type and Crop_Growth_Stage, then separating binary and continuous features. These continuous features were scaled with a StandardScaler, and an intercept column of ones was added to the feature matrix, before encoded columns were concatted back.
@@ -43,7 +71,8 @@ However, even while experimenting with different values of alpha, the overall lo
 The plot of the model above shows log loss decreasing as k increases . k=5 is the best value in this scenario since a decreasng log loss indicates that the model is assigning higher probabilities to the correct classes.
 
 In the future, I plan on experimenting with a wider range of alpha values (e.g. 0.0001 to 1.0) and increasing max_iter to give weights more time to converge.
-
+---
+# KNN Crop Reccomender-New Model
 Our second model is a KNN Crop Recommendation Model based off a new crop and soil dataset from mendeley. The crop recommendation model uses the data to predict/ reccomend what crop a farmer should grow given their soil, climate, and farming conditions.
 First, the dataset is cleaned in similar ways to the previous regression and KNN models, then correlation is run on all numeric features to reveal relationships before modeling.
 Categorical variables like TYPE_OF_CROP, SOIL, SOWN, HARVESTED, WATER_SOURCE, SEASON are one-hot encoded using pd.get_dummies. These binary columns are stored elsewhere so they can be appended after the rest of the numerical data is scaled. The _MAX columns (CROPDURATION_MAX, MAX_TEMP, WATERREQUIRED_MAX, RELATIVE_HUMIDITY_MAX, N_MAX, P_MAX, K_MAX) are dropped because they have near-zero variance across the dataset, making it unhelpful to the predictions.
@@ -98,10 +127,48 @@ The _MAX columns (e.g. CROPDURATION_MAX, MAX_TEMP) were dropped because they hel
 
 # REST API Matrix
 
-Resource | GET | POST | PUT | DELETE
--------- | --- | ---- | --- | ------
+| Resource | GET | POST | PUT | DELETE |
+| -------- | --- | ---- | --- | ------ |
+| `/farms` | Shows list of all farms | Add a new farm (request body contains farm details) | — | — |
+| `/farms/{farm_id}` | Shows details of a specific farm | — | Update farm information | Delete farm |
+| `/user_crop_data` | — | Add new farm conditions (request body contains farm condition data) | — | — |
+| `/user_crop_data/{farm_id}` | Shows all conditions for a specific farm | — | -- | -- |
+| `/user_crop_data/{user_crop_data_id}` | Shows specific entry of crop data | — | Update specific entry | Delete specific entry |
+| `/savedData` | — | Add saved ML model output data | — | — |
+| `/savedData/{saved_id}` | Shows specific saved data | — | Update saved data | Delete saved data |
+| `/savedGraphs` | — | Add a saved graph (request body contains graph and ML data) | — | — |
+| `/savedGraphs/{id}` | Shows a specific saved graph | — | Update saved graph | Delete saved graph |
+| `/savedReports` | — | Add a saved report (request body contains report and ML data) | — | — |
+| `/savedReports/{id}` | Shows a specific saved report | — | Update saved report | Delete saved report |
+| `/users` | Shows all users | Add a new user (request body contains user information) | — | — |
+| `/users/{user_id}` | Shows details for a specific user | — | Update user information | Delete user |
+| `/posts` | Shows all posts | Add a new post (request body contains title and text) | — | — |
+| `/posts/{post_id}` | Shows a specific post | — | Update post | Delete post |
+| `/comments/post/{post_id}` | Shows all comments under a post | Add a comment under a post (request body contains comment text) | — | — |
+| `/comments/user/{user_id}` | Shows all comments made by a user | — | — | — |
+| `/comments/{comment_id}` | Shows a specific comment | — | Update comment | Delete comment |
+| `/reactions/post/{post_id}` | Shows all reactions under a post | Add a reaction (request body contains like/dislike value) | — | — |
+| `/reactions/{reaction_id}` | Shows a specific reaction | — | Update reaction | Delete reaction |
 
+## Relation to Wireframes and User Stories
 
+- Farmers and Politicians must be able to see a list of all farms and specific details about a farm in order to compare crop statistics. Farmers can do this to get a better understanding of what the farmers around them are growing, while policy makers can use this to see how many farmers there are, and any general trends between the farmers.
+- Farmers should be able to access the user_crop_data in order to upload their information, they should be able to view all of their user_crop_data enteries based on their farm, and should be able to access an individual entry in order to view, update, and delete it
+- Farmers, Policy Makers, and Reseachers should be able to save the data generated by a ML. This saved data will also be built off in the future for graphs and reports
+- Policy Makers and Researchers should be able to generate and save graphs and reports in order to use the data beyond data visualization, and should be able to access, add, edit, and delete these saved graphs and reports as they collect more saved data
+- We should be able to access all users and specific user information mainly for wireframes, such as the home page which shows all users grouped by their user group, along with giving users the ability to update their profile.
+- All personas should be able to post, comment, and react to posts on the discussion board. This board serves as a way for all parties to be more aware of the issues they are facing, such as farmers letting policy makers know of some issues that are beyond crop metrics, and researchers reporting on trends they found that could impact farmers' ability to farm in the future and the direction of policies.
 
 # Mocked-up App
 
+## Farmer Discussion Board Page:
+![Farmer Discussion Board Page](FarmerDiscussionBoardPage.png)
+
+## Policymaker Crop Price Predictions Page:
+![Policymaker Crop Price Predictions Page](PolicymakerCropPricePredictionsPage.png)
+
+## Policymaker Crop Map Page:
+![Policymaker Crop Map Page](PolicymakerCropMapPage.png)
+
+## Policymaker Report Maker Page:
+![Policymaker Report Maker Page](PolicymakerReportMakerPage.png)
