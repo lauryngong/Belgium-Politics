@@ -21,6 +21,29 @@ Since the submission of Phase I, our team made several updates to the project pl
 For the policymaker persona, we added features involving agricultural demographics such as crop types, crop prices, farm productivity, community-reported complaints, and environmental alerts. We also expanded the application to include predictive recommendations for future policy planning instead of only showing historical data. For the researcher persona, we refined the focus toward combining datasets from multiple sources with different scales and methodologies while also allowing researchers to upload and manage their own soil data. These updates helped improve the overall scope of the project and made the personas more specialized and realistic.
 
 ## Data sets for ML modeling
+We obtained our dataset from the agriculture data source (kaggle) listed under Project Phase I, and read it into a pandas dataframe. Cleaning the data required removing duplicate values to reduce chances of overfitting or bias and standardizing the null values, checking they were missing at random and not from a hidden external factor to ensure that it didn’t skew the results of the model.
+
+![knnModelData](/knnph1.png)
+
+We then shrunk the dataset by 50%, ensuring observations were removed at random, to improve speed and reduce memory usage. Because the model compares the tests with each training point, the runtime gets computationally expensive, and isn’t easily achievable with the entire dataset. Additionally, we dropped the target column (Crop Health Label) so it wouldn’t get leaked in the process, and used one-hot encoding (pandas get_dummies()) to turn categorical features into numeric values so the model could process all features. The transformed feature, along with the other binary features were stored in a separate list to be re-added into the dataframe after the numerical features were scaled.
+
+![knnModelDataClean](/knnph2.png)
+![knnModelDataClean2](/knnph25.png)
+
+The dataset was split using train_test_split with a 80% training / 20% testing set split to train the ml model and evaluate its performance and a random state was added for consistent results. Then the numerical features of the dataset were scaled to account for the different units of each feature and the binary features were added back in.
+Afterwards, we concatenated the new (scaled) features with the previously dropped/stored features to create a clean dataset to input into the model.
+
+Our initial goal for the model was to predict ‘Chlorophyll Content’ for a crop-typically a good indicator of plant health-based on surrounding environmental features, however experimentation revealed that ‘Crop Health Label’ (a binary feature) actually  held a stronger relationship with the other features and reduced outlier influence when predicting. Though our initial plan was to use a linear regression model to predict chlorophyll content, this change pivoted us toward a K-Nearest Neighbors supervised model for our implementation. We also ran into an issue when running the model on the dataset because the calculations were taking up too much space on the RAM, resulting in a Memory Error, or alternatively, a kernel timeout. We first tried to fix it by deleting calculations after collecting results or using an optimized loop, but the memory error persisted. It was eventually fixed by randomly dropping a percentage of data from the dataset.
+
+We used cosine similarity over Euclidean distance because our agricultural dataset contains many features, sensor measurements, and binary features that work better with cosine rather than absolute geometric distances from a Euclidean Distance model.
+
+The model’s main function was to perform matrix multiplication on the normalized test vectors and the normalized training vectors, sort similarities, and predict the target values based on the nearest observations. Then, the MSE was calculated for k values [1,2,3,4,5] and we found that a k=5 gave us the best predictions (closer to the true value) and produced the best performing model. K tells us how many neighbors will be checked to determine the classification of a point and the smaller it is, the more flexible it is. Visualizations for the different k values were made with pyplot.
+
+![knnmodel](/knnph3.png)
+![knnresults](/knnph4.png)
+The plot above tells us that k=5 results in the best model.
+
+In the future, we plan on using a different measure for errors to calculate the best model since it doesn’t apply as well to binary results and tailoring the model to improve the results of the prediction by grouping features to find the best combination based off their relationship to each other.
 
 ---
 
@@ -90,7 +113,16 @@ Full code found on [our github repo](https://github.com/lauryngong/Farmers-Marke
 ^^ look for path database-files\first_market.sql
 
 
-## Wireframes
+# Wireframes
+
+### General Map
+![Map](/IMG_1971.png)
+
+### Farmer Wireframes
+![Farmer](/IMG_2181.png)
+
+### Policy Maker Wireframes
+![Policy Maker](/IMG_2180.png)
 
 ![Map](/IMG_1971.png)
 ![Farmer](IMG_2181.png)
