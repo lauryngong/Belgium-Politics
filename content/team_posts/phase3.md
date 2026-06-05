@@ -71,6 +71,7 @@ However, even while experimenting with different values of alpha, the overall lo
 The plot of the model above shows log loss decreasing as k increases . k=5 is the best value in this scenario since a decreasng log loss indicates that the model is assigning higher probabilities to the correct classes.
 
 In the future, I plan on experimenting with a wider range of alpha values (e.g. 0.0001 to 1.0) and increasing max_iter to give weights more time to converge.
+
 ---
 # KNN Crop Reccomender-New Model
 Our second model is a KNN Crop Recommendation Model based off a new crop and soil dataset from mendeley. The crop recommendation model uses the data to predict/ reccomend what crop a farmer should grow given their soil, climate, and farming conditions.
@@ -80,41 +81,96 @@ The continuous features were scaled with StandardScaler fit on training data, an
 The KNN model uses cosine similarity and is unsupervised. For each test point, the training set is normalized, the cosine similarities are computed via dot product, and the top-k most similar training points are identified. Unlike the first KNN model however, instead of averaging neighbor values the model uses finds the most used crop name among the k neighbor crop labels to determine a prediction.
 A predict() function was also built to allow predictions with outside input. It takes values for N, P, K, temperature, humidity, crop type, season, sowing month, harvest month, and water source. CROPDURATION and WATERREQUIRED, SOIL, and SOIL_PH are harcoded averages since it's not practical to collect from an user. The function scales the continuous inputs, builds the OHE vector, concatenates both, and runs the model to return a predicted crop name.
 
+---
+
 <iframe src="/plots/accuracy_plot.html" width="100%" height="450px" style="border:none;"></iframe>
 
 The plot above reveals the accuracy of k in the KNN model with the new crop dataset. The best k values are 3 and 5 at around 99.5%. k=2 is the worst performer at around 98.4%. After k=5, accuracy gradually decreases. This suggests the model would perform best with a k value of 3 or 5.
----
-### Data Source 1:
-CropRecc - sourced- external CSV dataset; contains soil, climate, and crop metadata used for the KNN crop recommendation model
-### Features Used for ML and Why:
-Spatial_Resolution - finer resolution captures more precise field detail, making it a useful proxy for detection quality of stress patches and canopy gaps.
-GPS_Coordinates - field location implicitly encodes climate zone, soil type, and regional farming conditions that influence crop health outcomes.
-Elevation_Data - altitude shapes temperature ranges, frost risk, and rainfall patterns, all of which directly affect what stress conditions crops face.
-Canopy_Coverage - reflects how well crops are physically establishing. Low coverage signals drought stress, poor germination, or pest damage.
-NDVI - one of the strongest direct indicators of vegetation health, measuring greenness from satellite data. Low NDVI reliably precedes visible symptoms of stress or disease.
-SAVI - corrects NDVI for bare soil interference, making vegetation health estimates more accurate in sparse canopy fields where raw NDVI would be misleading.
-Chlorophyll_Content - photosynthetic capacity is directly tied to chlorophyll levels. Declining values are an early biochemical warning of nutrient deficiency or disease before visual symptoms appear.
-Leaf_Area_Index - quantifies active leaf surface available for photosynthesis. An underdeveloped canopy strongly correlates with poor health and reduced yield.
-Crop_Stress_Indicator - a composite stress score aggregating multiple stress signals, making it one of the most direct predictors of the binary health label.
-Temperature - crops have narrow optimal thermal ranges; deviations in either direction cause measurable physiological stress.
-Humidity - high humidity promotes fungal disease and rot while low humidity accelerates water stress, making both extremes relevant to health classification.
-Rainfall - fundamental water availability driver. Too little causes drought stress; excess causes waterlogging and root disease.
-Wind_Speed - strong winds cause physical crop damage, accelerate soil drying, and increase evapotranspiration, all negatively affecting crop condition.
-Soil_Moisture - measures actual water availability at the root zone, which is more informative than rainfall alone since it accounts for drainage and retention differences across fields.
-Soil_pH - controls nutrient solubility and uptake. Outside a crop's optimal pH range, essential nutrients become chemically unavailable even when present in the soil.
-Organic_Matter - indicates soil fertility and microbial activity. Higher organic matter supports nutrient cycling and water retention, creating more favorable growing conditions.
-Weed_Coverage - weeds compete directly with crops for water, light, and nutrients. Higher coverage is a consistent negative signal for crop health.
-Pest_Damage - a direct severity measurement of crop damage, making it one of the most informative features for predicting an unhealthy label.
-Expected_Yield - encodes agronomic projections based on field conditions. Low expected yield is strongly correlated with poor crop health and serves as an integrated summary of many field factors.
-Water_Flow - measures irrigation availability independent of rainfall. Fields with insufficient flow are at drought risk even in otherwise adequate climates.
 
-Features not included and why:
-High_Resolution_RGB, Multispectral_Images, Thermal_Images, and Temporal_Images are binary availability flags, not actual measurements, so they carry no quantitative signal about field conditions. Bounding_Boxes is an object-detection artifact from image processing with no agricultural meaning. Field_Boundaries is spatial metadata with no direct health signal. Pest_Hotspots, Drainage_Features, Ground_Truth_Segmentation, Crop_Type, and Crop_Growth_Stage were retained in the model but handled separately as unscaled binary columns appended after StandardScaler, since scaling one-hot or binary features would distort their interpretation.
 ---
-### Data Source 2:
+## Data Source 1:
+CropRecc - sourced - external CSV dataset; contains soil, climate, and crop metadata used for the KNN crop recommendation model
+
+### Features Used for ML
+Spatial_Resolution — finer resolution captures more precise field detail, making it a useful proxy for detection quality of stress patches and canopy gaps.
+
+GPS_Coordinates — field location implicitly encodes climate zone, soil type, and regional farming conditions that influence crop health outcomes.
+
+Elevation_Data — altitude shapes temperature ranges, frost risk, and rainfall patterns, all of which directly affect what stress conditions crops face.
+
+Canopy_Coverage — reflects how well crops are physically establishing. Low coverage signals drought stress, poor germination, or pest damage.
+
+NDVI — one of the strongest direct indicators of vegetation health, measuring greenness from satellite data. Low NDVI reliably precedes visible symptoms of stress or disease.
+
+SAVI — corrects NDVI for bare soil interference, making vegetation health estimates more accurate in sparse canopy fields where raw NDVI would be misleading.
+
+Chlorophyll_Content — photosynthetic capacity is directly tied to chlorophyll levels. Declining values are an early biochemical warning of nutrient deficiency or disease before visual symptoms appear.
+
+Leaf_Area_Index — quantifies active leaf surface available for photosynthesis. An underdeveloped canopy strongly correlates with poor health and reduced yield.
+
+Crop_Stress_Indicator — a composite stress score aggregating multiple stress signals, making it one of the most direct predictors of the binary health label.
+
+Temperature — crops have narrow optimal thermal ranges; deviations in either direction cause measurable physiological stress.
+
+Humidity — high humidity promotes fungal disease and rot while low humidity accelerates water stress, making both extremes relevant to health classification.
+
+Rainfall — fundamental water availability driver. Too little causes drought stress; excess causes waterlogging and root disease.
+
+Wind_Speed — strong winds cause physical crop damage, accelerate soil drying, and increase evapotranspiration, all negatively affecting crop condition.
+
+Soil_Moisture — measures actual water availability at the root zone, which is more informative than rainfall alone since it accounts for drainage and retention differences across fields.
+
+Soil_pH — controls nutrient solubility and uptake. Outside a crop's optimal pH range, essential nutrients become chemically unavailable even when present in the soil.
+
+Organic_Matter — indicates soil fertility and microbial activity. Higher organic matter supports nutrient cycling and water retention, creating more favorable growing conditions.
+
+Weed_Coverage — weeds compete directly with crops for water, light, and nutrients. Higher coverage is a consistent negative signal for crop health.
+
+Pest_Damage — a direct severity measurement of crop damage, making it one of the most informative features for predicting an unhealthy label.
+
+Expected_Yield — encodes agronomic projections based on field conditions. Low expected yield is strongly correlated with poor crop health and serves as an integrated summary of many field factors.
+
+Water_Flow — measures irrigation availability independent of rainfall. Fields with insufficient flow are at drought risk even in otherwise adequate climates.
+
+### Features not included and why:
+High_Resolution_RGB, Multispectral_Images, Thermal_Images, and Temporal_Images are binary availability flags, not actual measurements, so they carry no quantitative signal about field conditions. Bounding_Boxes is an object-detection artifact from image processing with no agricultural meaning. Field_Boundaries is spatial metadata with no direct health signal. Pest_Hotspots, Drainage_Features, Ground_Truth_Segmentation, Crop_Type, and Crop_Growth_Stage were retained in the model but handled separately as unscaled binary columns appended after StandardScaler, since scaling one-hot or binary features would distort their interpretation.
+
+---
+## Data Source 2:
 Crop Health Dataset - sourced - external dataset used for the logistic regression model; downsampled to balance classes
 
-### Features Used for ML and Why:
+### Features used for ML
+CROPS — the name/identifier of the crop being grown.
+
+TYPE_OF_CROP — categorical classification of the crop category (e.g. cereal, legume, vegetable). Encodes broader agronomic groupings that share similar growing requirements.
+
+SOIL — the soil type associated with the crop or field. Different soils have different drainage, nutrient retention, and aeration properties that affect crop suitability.
+
+SEASON — the growing season (e.g. Kharif, Rabi, Zaid). Encodes climate and timing context since crops grown in different seasons face fundamentally different temperature and rainfall conditions.
+
+SOWN — the month or period when the crop is planted. Planting timing affects frost exposure, rainfall alignment, and how long the crop has to mature.
+
+HARVESTED — the month or period when the crop is harvested. Together with SOWN it defines the full growing window and can imply total growing duration.
+
+WATER_SOURCE — the irrigation or water supply type (e.g. rain-fed, canal, groundwater). Determines water reliability and stress risk independent of rainfall levels.
+
+SOIL_PH / SOIL_PH_HIGH — the minimum and maximum soil pH range suitable for the crop. pH controls nutrient availability; most crops have a narrow optimal range outside of which uptake is impaired.
+
+CROPDURATION / CROPDURATION_MAX — the minimum and maximum number of days the crop takes to mature. Encodes how long the crop is exposed to environmental conditions and stress risks.
+
+TEMP / MAX_TEMP — the minimum and maximum temperature tolerance of the crop in °C. Defines the thermal window within which the crop can grow without stress.
+
+WATERREQUIRED / WATERREQUIRED_MAX — the minimum and maximum water requirement of the crop in mm. Encodes how drought-sensitive or water-intensive the crop is.
+
+RELATIVE_HUMIDITY / RELATIVE_HUMIDITY_MAX — the minimum and maximum relative humidity range the crop tolerates. High humidity promotes disease; low humidity increases water stress.
+
+N / N_MAX — the minimum and maximum nitrogen requirement of the crop. Nitrogen is the primary driver of vegetative growth and is the most commonly deficient macronutrient in agricultural soils.
+
+P / P_MAX — the minimum and maximum phosphorus requirement. Phosphorus supports root development, flowering, and energy transfer within the plant.
+
+K / K_MAX — the minimum and maximum potassium requirement. Potassium regulates water uptake, disease resistance, and overall plant strength, making it critical to crop health and yield.
+
+### Features Not Included:
 N, P, K (nitrogen, phosphorus, potassium minimums) - soil nutrient indicators that determine what crops can grow in a given soil.
 TEMPERATURE - crops have specific temperature tolerances which makes this is a strong predictor of crop health.
 RELATIVE_HUMIDITY - affects water stress, disease risk, and crop suitability by region and season.
