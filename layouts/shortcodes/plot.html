@@ -1,0 +1,4 @@
+{{- $src := .Get "src" -}}
+{{- $width := .Get "width" | default "100%" -}}
+{{- $height := .Get "height" | default "450px" -}}
+<iframe src="{{ $src | relURL }}" width="{{ $width }}" height="{{ $height }}" style="border:none;" loading="lazy"></iframe>

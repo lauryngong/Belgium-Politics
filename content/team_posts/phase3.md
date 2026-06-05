@@ -83,7 +83,7 @@ A predict() function was also built to allow predictions with outside input. It 
 
 ---
 
-<iframe src="/plots/accuracy_plot.html" width="100%" height="450px" style="border:none;"></iframe>
+{{< plot src="plots/accuracy_plot.html" height="450px" >}}
 
 The plot above reveals the accuracy of k in the KNN model with the new crop dataset. The best k values are 3 and 5 at around 99.5%. k=2 is the worst performer at around 98.4%. After k=5, accuracy gradually decreases. This suggests the model would perform best with a k value of 3 or 5.
 
