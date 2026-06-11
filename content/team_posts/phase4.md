@@ -30,6 +30,9 @@ Our database model has constantly evolved over the course of this project, and o
 Our model also includes tables to store information for the ML models. The crop price predictor model used for the policy maker has a price_params and price_scalar table for its inpurs, and then a WeatherData and cropPrice table to store its training data. The crop type predictor model used for the farmer has model3_scalar, model3_training_data, and  saved_crop_preds tables used for its inputs, training data, and saved results.
 
 Despite the large amount of changes, as a group we feel confident that our final model is the most reasonable iteration of our model and that it will properly support all personas and create logical RESTAPI connections.
+
+### Our final database model:
+![Final Relational Model](/finalRelational.png)
 ---
 
 ## Data Models
