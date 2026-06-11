@@ -205,6 +205,11 @@ The _MAX columns (e.g. CROPDURATION_MAX, MAX_TEMP) were dropped because they hel
 | `/comments/{comment_id}` | Shows a specific comment | — | Update comment | Delete comment |
 | `/reactions/post/{post_id}` | Shows all reactions under a post | Add a reaction (request body contains like/dislike value) | — | — |
 | `/reactions/{reaction_id}` | Shows a specific reaction | — | Update reaction | Delete reaction |
+| `/model3/prediction/{varibles}` | Fetch a crop type prediction based on inputted variables | — | - | - |
+| `/pred` | Get past predictions of the crop-type model | Add new prediction to past crpo type predictions | - | - |
+| `/prices/prediction/<crop>/<country>` | Get crop price prediction based on crop type and country | - | - | - |
+| `/prices/average` | Get average crop price in a country grouped by years | - | - | - |
+
 
 ## Relation to Wireframes and User Stories
 

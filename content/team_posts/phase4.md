@@ -13,6 +13,8 @@ authors:
 showAuthorsBadges: false
 ---
 
+Welcome back to our blog! Thank you so much for sticking it out with us for this entire journey!! Being able to create and deploy an application like this has definitely been a great, and very stressful at times, learning journey. During this last phase we focused a lot on bringing everything we've planned and done together: fully integrating our ML models into the frontend, updating our DB, and fleshing out all of our webpages.
+
 ## User Interface + Persona Pages
 The Farmers Market application was designed around three primary user personas: Farmers, Researchers, and Policymakers. Each persona has access to specialized pages and tools tailored to their needs. Farmers can view crop predictions, farm information, and community discussions. Researchers can analyze environmental and soil data and compare datasets across regions. Policymakers can explore regional maps, environmental reports, and future predictions to support planning and decision-making. Throughout Phase IV, the user interface was refined based on feedback from professors, testing activities, and team discussions to improve usability and navigation.
 
@@ -110,3 +112,7 @@ For predictive checks, I used the accuracy_score metric from sklearn and used a 
 The model uses finds the most used crop name among the k neighbor crop labels to determine a prediction. In this instance, k=3, and k=5 produced the most accurate results.
 A predict() function was also built to allow predictions with outside input. It takes values for N, P, K, temperature, humidity, crop type, season, sowing month, harvest month, and water source. CROPDURATION and WATERREQUIRED, SOIL, and SOIL_PH are harcoded averages since it's not practical to collect from an user. The function scales the continuous inputs, builds the OHE vector, concatenates both, and runs the model to return a predicted crop name.
 
+# Oh, and by the way....
+
+To Dr. Gerber, Dr. Fontenot, and Seamus, thank you so so much for all of our support and guidance during this dialogue! We really appreciate everything you have done for all of us from an academic and personal standpoint. We've learned so much about ML and databases as a group, and having the chance to do this abroad with so many guest speakers really helps to put what we are doing and learning about into a much larger context than a classroom would. And from a personal point, thank you so much for always being up for conversations, grabbing food, and trips to the ER. This dialogue has given all of us a truly unique learning experience with memories to last a lifetime, so thank you for taking the time to set up this program and run it this year. We hope you've enjoyed it as much as we have!
+Thank you so so so so much again, from your local farmers.
