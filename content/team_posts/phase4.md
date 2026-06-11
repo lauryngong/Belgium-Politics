@@ -38,24 +38,31 @@ A linear regression model is used to predict crop selling prices for farmers and
 The target variable is selling price in euros per 100kg. Features include mean annual temperature, total annual precipitation, a quadratic precipitation term to capture non-linear weather effects, and two lag price features representing the previous two years' selling prices for the same crop and country. Categorical variables — crop type and country — are one-hot encoded using pd.get_dummies with drop_first=True to avoid multicollinearity. Numeric features are standardised using StandardScaler fitted on training data only to prevent data leakage.
 The lag price features were the most impactful addition to the model. Grain prices are highly autocorrelated — last year's price is a strong predictor of this year's price — and including price_lag1 and price_lag2 significantly improved predictive performance. 
 
+### Frontend
+
+The model is connected to Streamlit via a Flask REST API route (GET /prices_model/prediction/<crop>/<country>). The policymaker prediction page fetches the prediction and displays it alongside the historical average for that crop/country combination, the percentage difference from the historical average, and a trend line showing all historical years plus the model's prediction as the next point. A choropleth map page displays predicted prices across all 25 EU countries simultaneously for a selected crop type, with results cached for one hour to avoid repeated model calls.
+
+### Model DB
+
 ## Model Assumptions
 
 Prior to modelling, a correlation heatmap was generated to verify that meaningful relationships existed between the input features and the target variable, confirming that the selected features had predictive value before proceeding to model training.
 
-The final model achieved an R² of 0.52 on the test set, meaning the model explains approximately 52% of the variation in crop selling prices using weather conditions, lag prices, and regional indicators. 
+The final model achieved an R² of 0.47 on the test set, meaning the model explains approximately 47% of the variation in crop selling prices using weather conditions, lag prices, and regional indicators. 
 
 Three diagnostic plots were produced to verify model assumptions:
 
 ### Residuals vs Predicted Values
-The residuals vs fitted values plot was used to check the linearity and homoscedasticity assumptions. Random scatter around zero with no systematic pattern indicates the linear relationship assumption is reasonably satisfied and that variance of the residuals is approximately constant across predicted values.
-![Res vs pred](/res_vs_yhat.png)
+The residuals vs fitted values plot was used to check the linearity and homoscedasticity assumptions. Random scatter around zero with no systematic pattern indicates the linear relationship assumption is reasonably satisfied and that variance of the residuals is approximately constant across predicted values. As seen on our graph, there is no clear pattern in the data, meaning that the data is now linear and the residuals have constant variance.
+![Res vs pred](/new_res_vs_yhat.png)
 
 ### Residuals vs Order
-The residuals vs order plot checks for autocorrelation — whether residuals follow a pattern based on the order observations appear in the data. Random scatter with no trend suggests residuals are independent, satisfying the independence assumption.
-![Res vs order](/res_vs_order.png)
+The residuals vs order plot checks for autocorrelation — whether residuals follow a pattern based on the order observations appear in the data. There is a random scatter with no trend on our data points around 0, suggesting that residuals are independent, satisfying the independence assumption.
+![Res vs order](/new_res_vs_order.png)
 
 
 ### Predicted vs Actual Values
+
 The predicted vs actual values plot shows how closely model predictions align with true selling prices. Points clustering along the diagonal line of perfect prediction indicate the model is capturing the general price level well. The points on our graph stay relatively along the line, meaning that the data is captured well. Originally, there was a curve in the data compared to the line, which showed us that the data was not exactly linear, and this was fixed by adding the quadratic precipitation sum squared column.
 ![Predicted vs Actual](/pred_vs_act.png)
 ---
