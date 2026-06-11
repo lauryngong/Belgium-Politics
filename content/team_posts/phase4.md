@@ -1,8 +1,8 @@
 ---
 title: "Project - Phase IV"
-date: 2026-05-19
+date: 2026-06-11
 draft: false
-description: "Setting up the Farmer's Market"
+description: "Finishing up the Farmer's Market"
 slug: "phase4post"
 tags: ["project", "Setup"]
 authors:
