@@ -1,8 +1,8 @@
 ---
 title: "Project - Phase IV"
-date: 2026-05-19
+date: 2026-06-11
 draft: false
-description: "Setting up the Farmer's Market"
+description: "Finishing up the Farmer's Market"
 slug: "phase4post"
 tags: ["project", "Setup"]
 authors:
@@ -14,12 +14,17 @@ showAuthorsBadges: false
 ---
 
 ## User Interface + Persona Pages
-describe software architecture
+The Farmers Market application was designed around three primary user personas: Farmers, Researchers, and Policymakers. Each persona has access to specialized pages and tools tailored to their needs. Farmers can view crop predictions, farm information, and community discussions. Researchers can analyze environmental and soil data and compare datasets across regions. Policymakers can explore regional maps, environmental reports, and future predictions to support planning and decision-making. Throughout Phase IV, the user interface was refined based on feedback from professors, testing activities, and team discussions to improve usability and navigation.
+
+---
+
+## Software Architecture
+The application follows a three-layer architecture consisting of a Streamlit frontend, a Flask REST API backend, and a MySQL database. The Streamlit frontend handles user interaction and visualization, while the REST API serves as the communication layer between the user interface, machine learning models, and database. The database stores user information, farm data, crop information, saved analyses, community discussions, and model-related data. Machine learning models are integrated through API routes that receive user inputs, perform predictions, and return results to the frontend for display. This separation of responsibilities improves maintainability and allows different components of the application to be developed and updated independently.
 
 ---
 
 ## Database
-Descrbe final version of database model
+The final database model consists of several related tables that support the application's functionality. Core tables include users, farms, crops, posts, comments, reactions, saved reports, saved graphs, and saved analyses. Additional model-specific tables store machine learning information such as training data, scaling parameters, and saved prediction results. Relationships between tables allow users to create posts, comment on discussions, react to content, save analyses, and manage farm-related information. The database structure was refined throughout the project to support all three personas while maintaining data integrity and efficient access through the REST API.
 
 ---
 
@@ -60,7 +65,7 @@ KNN (K-Nearest Neighbors) does not have or require linearity, homoscedasticity, 
 
 I verified the features had a relationship prior to doing any modeling by using .corr() which is a pandas library that calculates the pairwise correlation between numerical columns in a dataset. It evaluates how strongly two variables change together. Out of the features, our chosen input features had the strongest correlation to crop type.
 
-[!correlation_img](/corrmod.png)
+![correlation_img](/corrmod.png)
 
 For predictive checks, I used the accuracy_score metric from sklearn and used a loop to determine the bet k. The library compares the predicted labels to the true labels to determine how good a model is.
 
