@@ -14,3 +14,5 @@ For Phase IV, I primarily worked on the Streamlit front end of our application. 
 
 ### What I found interesting
 Outside of the project, I enjoyed several of the activities we participated in this week. One of the most interesting experiences was visiting the energy laboratory and the coal mine. Although these visits were not as directly related to computer science as some of our previous site visits, they provided a unique experience. I also enjoyed the escape room activity because it gave a chance to work together in a different environment and strengthen our teamwork outside of the project. Despite the workload of completing the application, it was nice that we still had opportunities to explore and have fun together.
+
+![C-Mine](https://c-mine.be/sites/default/files/styles/landscape_large/public/2024-04/cm_1.JPG?h=71976bb4&itok=EcwcV30V)
