@@ -58,7 +58,7 @@ The model03 database consists of model3_scaler, which stores the feature means a
 ### Model Assumptions + Predictive Checks
 I verified the features had a relationship prior to doing any modeling by using .corr() which is a pandas library that calculates the pairwise correlation between numerical columns in a dataset. It evaluates how strongly two variables change together. Out of the features, our chosen input features had the strongest correlation to crop type.
 
-[!correlation_img](/corrmod.png)
+![correlation_img](/corrmod.png)
 
 For predictive checks, I used the accuracy_score metric from sklearn and used a loop to determine the bet k. The library compares the predicted labels to the true labels to determine how good a model is.
 
