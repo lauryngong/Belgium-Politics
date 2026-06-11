@@ -24,8 +24,12 @@ The application follows a three-layer architecture consisting of a Streamlit fro
 ---
 
 ## Database
-The final database model consists of several related tables that support the application's functionality. Core tables include users, farms, crops, posts, comments, reactions, saved reports, saved graphs, and saved analyses. Additional model-specific tables store machine learning information such as training data, scaling parameters, and saved prediction results. Relationships between tables allow users to create posts, comment on discussions, react to content, save analyses, and manage farm-related information. The database structure was refined throughout the project to support all three personas while maintaining data integrity and efficient access through the REST API.
 
+Our database model has constantly evolved over the course of this project, and our final model is much more simple and straightforward than our initial mock ups and implementations. It now consists of the users, farms, user_growing_data, saved_reports, posts, comments, and reactions tables. The posts, comments, and reactions tables are used to implement the dicussion board part of the app, while the farms and user_growing data is used to represent information on the farmer's side that policy makers and researchers can access. The saved_report table is used to save the created reports made by policy makers, and most of these tables are connected to the user that created it through a foreign key. The user serves as the central entity, as they are able to create posts, comments and reactions, and add saved_reports and farm information depending on their role
+
+Our model also includes tables to store information for the ML models. The crop price predictor model used for the policy maker has a price_params and price_scalar table for its inpurs, and then a WeatherData and cropPrice table to store its training data. The crop type predictor model used for the farmer has model3_scalar, model3_training_data, and  saved_crop_preds tables used for its inputs, training data, and saved results.
+
+Despite the large amount of changes, as a group we feel confident that our final model is the most reasonable iteration of our model and that it will properly support all personas and create logical RESTAPI connections.
 ---
 
 ## Data Models
