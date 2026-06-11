@@ -34,7 +34,7 @@ verifying checking of all model assumptions and predictive checks (things not in
 
 ---
 
-## ML Mode2: Linear Regression
+## ML Mode2: K-Nearest Neighbors
 fundamental understanding of ML models and their implementation in the software architecture:
 
 verifying checking of all model assumptions and predictive checks (things not included in the web app):
