@@ -82,6 +82,8 @@ Both functionalities are stored as tabs on the crop-prediction page.
 The model03 database consists of model3_scaler, which stores the feature means and stds of numerical values so we can properly scale the inputs; saved_crop_preds, which stores the saved predictions made by farmers (this includes the PK, farmer_id, type_of_crop, sown date, harvested, date, water_source, predicted_crop, and time of creation); and a model3_training_data table which consists of a PK, feature vector as a JSON tpye, and crop_label for the actual output. These are used in the predictor function to determine which point is closest to the input values. There is a total of 39,899 observations for training.
 
 ### Model Assumptions + Predictive Checks
+KNN (K-Nearest Neighbors) does not have or require linearity, homoscedasticity, or the absence of autocorrelation. These are strictly foundational assumptions for parametric models like Linear Regression, whereas KNN is a non-parametric algorithm, meaning it makes virtually no assumptions about the underlying distribution or structure of the data.
+
 I verified the features had a relationship prior to doing any modeling by using .corr() which is a pandas library that calculates the pairwise correlation between numerical columns in a dataset. It evaluates how strongly two variables change together. Out of the features, our chosen input features had the strongest correlation to crop type.
 
 ![correlation_img](/corrmod.png)
