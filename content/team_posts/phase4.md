@@ -37,7 +37,7 @@ Despite the large amount of changes, as a group we feel confident that our final
 ---
 
 ## ML Model1: Linear Regression
-## Logic
+### Logic
 A linear regression model is used to predict crop selling prices for farmers and policymakers based on regional weather conditions and recent price history. The dataset combines Eurostat crop price data with Open-Meteo historical weather records, covering 25 EU member states and 5 crop types (soft wheat, durum wheat, barley, rye, and feed barley) from 2015 to 2024.
 The target variable is selling price in euros per 100kg. Features include mean annual temperature, total annual precipitation, a quadratic precipitation term to capture non-linear weather effects, and two lag price features representing the previous two years' selling prices for the same crop and country. Categorical variables — crop type and country — are one-hot encoded using pd.get_dummies with drop_first=True to avoid multicollinearity. Numeric features are standardised using StandardScaler fitted on training data only to prevent data leakage.
 The lag price features were the most impactful addition to the model. Grain prices are highly autocorrelated — last year's price is a strong predictor of this year's price — and including price_lag1 and price_lag2 significantly improved predictive performance. 
@@ -69,6 +69,7 @@ The residuals vs order plot checks for autocorrelation — whether residuals fol
 
 The predicted vs actual values plot shows how closely model predictions align with true selling prices. Points clustering along the diagonal line of perfect prediction indicate the model is capturing the general price level well. The points on our graph stay relatively along the line, meaning that the data is captured well. Originally, there was a curve in the data compared to the line, which showed us that the data was not exactly linear, and this was fixed by adding the quadratic precipitation sum squared column.
 ![Predicted vs Actual](/pred_vs_act.png)
+
 ---
 
 ## ML Mode2: K-Nearest Neighbors
